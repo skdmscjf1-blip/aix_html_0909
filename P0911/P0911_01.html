@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼태그</title>
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+        #address{width: 300px;}
+
+
+
+    </style>
+</head>
+<body>
+    <h2>회원가입</h2>
+    <!--- get , post, put , delete : api-->
+    <form name="frm" action="result.html" method="get">
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" autofocus required><br>
+        <label>패스워드</label>
+        <input type="password" name="pw" id="pw" ><br>
+        <label>이름</label>
+        <input type="text" name="name" id="name" value="홍길동" disabled><br>
+        <label>주소</label><br>
+        <label>우편번호</label>
+        <input type="text" name="zipcode" id="zipcode" readonly>
+        <button type="button" onclick="postBtn()">우편번호 검색</button><br>
+        <script>
+            function postBtn(){
+                // alert("버튼클릭");
+                // 다음주소 연결
+                new kakao.Postcode({
+                    oncomplete: function(data) {
+
+                        document.getElementById("zipcode").value = data.zonecode
+                        document.getElementById("address").value = data.address
+
+                    }
+                }).open();
+
+            }
+
+        </script>
+        <input type="text" name="address" id="address" placeholder="상세주소가 들어갑니다.">
+        <br>
+        <label>성별</label><br>
+        <input type="radio" name="gender" id="man" value="남자">
+        <label for="man">남자</label>
+        <input type="radio" name="gender" id="woman" value="여자">
+        <label for="woman">여자</label>
+        <br>
+        <label>취미</label><br>
+        <input type="checkbox" name="hobby" id="game" value="게임">
+        <label for="game">게임</label>
+        <input type="checkbox" name="hobby" id="golf" value="골프">
+        <label for="golf">골프</label>
+        <input type="checkbox" name="hobby" id="swim" value="수용">
+        <label for="swim">수영</label>
+        <input type="checkbox" name="hobby" id="run" value="러닝">
+        <label for="run">러닝</label>
+        <input type="checkbox" name="hobby" id="book" value="독서">
+        <label for="book">독서</label>
+        <br>
+        <label>학과</label><br>
+        <select name="major">
+            <option value="컴퓨터공학과">컴퓨터공학과</option>
+            <option value="국문학과">국문학과</option>
+            <option value="영문학과">영문학과</option>
+
+
+        </select>
+        <br>
+        <input type="file" name="afile"><br>
+        <input type="submit" value="input완료">
+        <br>
+        <button type="button" onclick="confirmBtn()">버튼완료</button>
+        <script>
+            function confirmBtn(){
+                alert("완료버튼클릭");
+                if (document.getElementById("id").value==""){
+
+                    alert("아이디를 입력하셔야 합니다.");
+                    document.getElementById("id").focus();
+                    return
+
+                }
+                frm.submit();
+
+            }
+
+
+        </script>        
+
+
+
+
+    </form>
+    
+</body>
+</html>
