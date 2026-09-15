@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img{width: 300px;}
+        div{width: 300px; height: 200px; border: 3px solid black;
+            overflow: hidden;
+        }
+
+        .box{width: 300px;
+            transition: all 1s;
+        
+        }
+        .box:hover{transform: scale(1.2);
+        
+        }
     </style>
 </head>
 <body>
-    <img src="images/car1.jpg">
+    <div>
+        <img class="box" src="images/a2.jpg">
+    </div>
 </body>
 </html>
