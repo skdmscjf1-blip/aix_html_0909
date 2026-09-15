@@ -1,0 +1,609 @@
+
+        /* =========================================
+           전체 기본 설정
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, "Noto Sans KR", sans-serif;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+
+        /* =========================================
+           상단 메뉴
+        ========================================= */
+
+        header {
+            width: 100%;
+            height: 90px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 60px;
+
+            background-color: white;
+        }
+
+
+        /* 로고 */
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .logo span {
+            display: block;
+
+            font-size: 10px;
+            font-weight: normal;
+
+            letter-spacing: 5px;
+
+            margin-top: 5px;
+
+            color: #888;
+        }
+
+
+        /* 메뉴 */
+
+        nav ul {
+            display: flex;
+            gap: 45px;
+        }
+
+        nav li {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        nav a {
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #748369;
+        }
+
+
+        /* 예약 버튼 */
+
+        .reservation {
+            border: 1px solid #333;
+
+            padding: 12px 22px;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+        .reservation:hover {
+            background-color: #333;
+            color: white;
+        }
+
+
+        /* =========================================
+           상단 큰 이미지
+        ========================================= */
+
+        .hero {
+            width: 100%;
+            height: 430px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* 사진을 살짝 어둡게 */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* 사진 위 글씨 */
+
+        .hero-text {
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            text-align: center;
+
+            color: white;
+
+            z-index: 2;
+        }
+
+
+        .hero-text h1 {
+
+            font-size: 48px;
+
+            letter-spacing: 8px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .hero-text p {
+
+            font-size: 14px;
+
+            letter-spacing: 4px;
+        }
+
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        main {
+
+            width: 1200px;
+
+            max-width: 90%;
+
+            margin: 0 auto;
+
+            padding: 60px 0 100px;
+        }
+
+
+
+        /* 현재 위치 */
+
+        .location {
+
+            text-align: right;
+
+            font-size: 12px;
+
+            color: #999;
+
+            margin-bottom: 50px;
+        }
+
+
+
+        /* NEWS 제목 */
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 60px;
+        }
+
+
+        .title h2 {
+
+            font-size: 38px;
+
+            font-weight: normal;
+
+            letter-spacing: 6px;
+        }
+
+
+        .title p {
+
+            margin-top: 15px;
+
+            font-size: 14px;
+
+            color: #999;
+        }
+
+
+
+        /* =========================================
+           검색창
+        ========================================= */
+
+        .search-box {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            margin-bottom: 25px;
+        }
+
+
+        .search-box select {
+
+            width: 120px;
+            height: 42px;
+
+            border: 1px solid #ddd;
+
+            padding-left: 10px;
+
+            margin-right: 5px;
+        }
+
+
+        .search-box input {
+
+            width: 250px;
+            height: 42px;
+
+            border: 1px solid #ddd;
+
+            padding: 0 15px;
+        }
+
+
+        .search-box button {
+
+            width: 70px;
+            height: 42px;
+
+            border: none;
+
+            background-color: #555;
+
+            color: white;
+
+            cursor: pointer;
+        }
+
+
+        .search-box button:hover {
+
+            background-color: #748369;
+        }
+
+
+
+        /* =========================================
+           NEWS 게시판
+        ========================================= */
+
+        .news-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            border-top: 2px solid #333;
+        }
+
+
+        .news-table th {
+
+            height: 60px;
+
+            background-color: #fafafa;
+
+            border-bottom: 1px solid #ddd;
+
+            font-size: 14px;
+        }
+
+
+        .news-table td {
+
+            height: 70px;
+
+            border-bottom: 1px solid #eee;
+
+            text-align: center;
+
+            font-size: 14px;
+        }
+
+
+        /* 번호 */
+
+        .number {
+
+            width: 100px;
+        }
+
+
+        /* 제목 */
+
+        .news-table .subject {
+
+            text-align: left;
+
+            padding-left: 30px;
+        }
+
+
+        .news-table .subject a:hover {
+
+            color: #748369;
+
+            text-decoration: underline;
+        }
+
+
+        /* 리조트 */
+
+        .resort {
+
+            width: 150px;
+        }
+
+
+
+        /* =========================================
+           페이지 번호
+        ========================================= */
+
+        .pagination {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            margin-top: 50px;
+        }
+
+
+        .pagination a {
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border: 1px solid #ddd;
+
+            font-size: 13px;
+        }
+
+
+        .pagination a:hover {
+
+            background-color: #748369;
+
+            color: white;
+        }
+
+
+        .pagination .active {
+
+            background-color: #333;
+
+            color: white;
+        }
+
+
+
+        /* =========================================
+           중간 배너
+        ========================================= */
+
+        .middle-banner {
+
+            width: 100%;
+            height: 300px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .middle-banner img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .middle-banner-text {
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            color: white;
+
+            text-align: center;
+
+            background-color: rgba(0, 0, 0, 0.35);
+
+            padding: 25px 50px;
+        }
+
+
+        .middle-banner-text h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background-color: #292929;
+
+            color: #999;
+
+            padding: 55px 60px;
+        }
+
+
+        .footer-inner {
+
+            width: 1200px;
+
+            max-width: 100%;
+
+            margin: 0 auto;
+        }
+
+
+        .footer-menu {
+
+            display: flex;
+
+            gap: 25px;
+
+            margin-bottom: 25px;
+
+            color: #ddd;
+
+            font-size: 13px;
+        }
+
+
+        footer p {
+
+            font-size: 12px;
+
+            line-height: 2;
+        }
+
+
+
+        /* =========================================
+           모바일
+        ========================================= */
+
+        @media(max-width: 900px) {
+
+            header {
+
+                height: 70px;
+
+                padding: 0 20px;
+            }
+
+
+            nav {
+
+                display: none;
+            }
+
+
+            .reservation {
+
+                padding: 9px 12px;
+            }
+
+
+            .hero {
+
+                height: 320px;
+            }
+
+
+            .hero-text h1 {
+
+                font-size: 32px;
+            }
+
+
+            main {
+
+                width: 94%;
+
+                max-width: 94%;
+            }
+
+
+            .search-box {
+
+                justify-content: center;
+            }
+
+
+            .search-box input {
+
+                width: 180px;
+            }
+
+
+            .number {
+
+                width: 60px;
+            }
+
+
+            .resort {
+
+                width: 90px;
+            }
+
+
+            .news-table .subject {
+
+                padding-left: 10px;
+            }
+
+
+            footer {
+
+                padding: 40px 25px;
+            }
+
+        }

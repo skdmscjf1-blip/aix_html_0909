@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        ul{width: 1000px; height: 40px; margin: 0 auto;
+        display: flex; list-style: none;
+        box-sizing: border-box;}
+        li{height: 40px; text-align: center;}
+        li:after{
+            content: "ㅣ";
+            color: red;
+            margin: 0 20px;
+        }
+        li:last-child::after{
+            content: ""; margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>사과</li>
+        <li>복숭아</li>
+        <li>참외</li>
+        <li>수박</li>
+        <li>바나나</li>
+
+
+
+    </ul>
+</body>
+</html>
