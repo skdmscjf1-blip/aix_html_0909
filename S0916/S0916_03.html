@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="n1" id="n1"><br>
+    <input type="text" name="n2" id="n2"><br>
+    <input type="text" name="n3" id="n3"><br>
+    <button type="button" onclick="btn()">확인</button>
+    <h2>결과</h2>
+    <div id="d01"></div>
+    <script>
+        function btn(){
+            // 타입 : str , int , float , boolean , defined, null
+            // 변수선언 : var-옛버전 , let -최신버전 , const -상수
+            //console.log , document.write,alert,confirm,prompt
+            //input - value , 그외태그 - innerText
+            //alert("확인")
+            // n1,n2를 비교해서 더 큰값을 출력하시오.
+            var a=Number(document.getElementById("n1").value);
+            let b=Number(document.getElementById("n2").value);
+            const c=Number(document.getElementById("n3").value);
+            result = a>b? (a>c?a:c):(b>c?b:c);
+            document.getElementById("d01").innerText= result;
+            
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        div{height: 300px; font-size: 40px; text-align: center;}
+        .c1{width: 25%; background: yellow; float: left;}
+        .c2{width: 25%; background:  green; float: left;}
+        .c3{width: 25%; background: skyblue; float: left;}
+        .c4{width: 25%; background: pink; float: left;}
+        @media screen and (max-width:1000px){
+
+            .c4{display: none;}
+            .c1{width: 33.3%;}
+            .c2{width: 33.3%;}
+            .c3{width: 33.3%;}
+        }
+        @media screen and (max-width:800px){
+
+            .c4{display: none;}
+            .c3{display: none;}
+            .c1{width: 50%;}
+            .c2{width: 50%;}
+        }
+        @media screen and (max-width:600px){
+
+            .c4{display: none;}
+            .c3{display: none;}
+            .c1{width: 100%;}
+            .c2{width: 100%; clear: both;}
+        }
+    </style>
+</head>
+<body>
+    <div class="c1">컨텐츠 1</div>
+    <div class="c2">컨텐츠 2</div>
+    <div class="c3">컨텐츠 3</div>
+    <div class="c4">컨텐츠 4</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d01{width: 200px; height: 100px; border: 1px solid black;
+        text-align: center;}
+    </style>
+</head>
+<body>
+    <input type="text" name="birth" id="birth" placeholder="예) 2000,3,1"><br>
+    <button type="button" onclick="btn()">확인</button>
+    <h2>당신의 생일은?</h2>
+    <div id="d01"></div>
+    <script>
+        function btn(){
+            var birth =document.getElementById("birth").value;
+            birth = birth.split(",")
+            console.log(birth[0]);
+            console.log(birth[1]);
+            console.log(birth[2]);
+            console.log(birth[0]+"년"+birth[1]+"월"+birth[2]+"일");
+            document.getElementById("d01").innerText = `${birth[0]}년${birth[1]}월${birth[2]}일`;
+            //document.getElementById("d01").innerText = birth[0]+"년"+birth[1]+"월"+birth[2]+"일";
+            
+            //alert("test")
+
+        }
+
+    </script>
+</body>
+</html>

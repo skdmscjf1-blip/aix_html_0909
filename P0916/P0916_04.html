@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px; margin: 100px; background: red;
+        animation: ract 1.5s infinite alternate, background 1.5s infinite alternate
+        }
+        @keyframes ract{
+            from{transform: translate(0px) rotate(0deg);}
+            to{transform: translate(500px) rotate(360deg);}
+
+        }
+        @keyframes background{
+            from{background: red;}
+            50%{background: greenyellow;}
+            to{background: blue; border-radius: 50%;}
+        }
+        /*   
+        @keyframes ract{
+            from{transform: perspective(200px) rotateX(0deg) rotateY(0deg);}
+            50%{transform: perspective(200px) rotateX(-180deg) rotateY(0deg);}
+            to{transform: perspective(200px) rotateX(-180deg) rotateY(-180deg);}
+
+        }
+        @keyframes background{
+            from{background: red;}
+            50%{background: greenyellow;}
+            to{background: blue;}
+
+
+        }*/
+    </style>
+
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,2248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FOREST STAY</title>
+
+    <!-- 구글폰트 -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   기본 설정
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    color: #222;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    width: 100%;
+    height: 90px;
+
+    background: rgba(255,255,255,0.97);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.header-inner {
+
+    width: 1200px;
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 42px;
+}
+
+
+nav a {
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+
+    color: #52705e;
+}
+
+
+.reservation {
+
+    padding: 11px 20px;
+
+    border: 1px solid #315743;
+
+    color: #315743;
+
+    font-size: 14px;
+}
+
+
+.reservation:hover {
+
+    background: #315743;
+
+    color: white;
+}
+
+
+
+/* =====================================================
+   MAIN VISUAL
+===================================================== */
+
+.main-visual {
+
+    height: 820px;
+
+    position: relative;
+
+    background:
+
+        linear-gradient(
+            rgba(0,0,0,0.22),
+            rgba(0,0,0,0.32)
+        ),
+
+        url(
+        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=90"
+        );
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+.main-copy {
+
+    margin-top: 40px;
+}
+
+
+.main-copy .small {
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+
+.main-copy h1 {
+
+    font-size: 67px;
+
+    font-weight: 300;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+
+.main-copy p {
+
+    font-size: 19px;
+
+    font-weight: 300;
+
+    line-height: 1.9;
+}
+
+
+.scroll {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.scroll-line {
+
+    width: 1px;
+
+    height: 45px;
+
+    background: white;
+
+    margin: 12px auto 0;
+}
+
+
+
+/* =====================================================
+   공통 SECTION
+===================================================== */
+
+.section {
+
+    width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 130px 0;
+}
+
+
+.section-title {
+
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+
+.section-title .eng {
+
+    font-size: 13px;
+
+    color: #8c9c91;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 12px;
+}
+
+
+.section-title h2 {
+
+    font-size: 40px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+.section-title p {
+
+    color: #888;
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+
+    text-align: center;
+
+    padding: 130px 20px;
+}
+
+
+.intro .small {
+
+    color: #66806e;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+}
+
+
+.intro h2 {
+
+    font-family: Georgia, serif;
+
+    font-size: 45px;
+
+    font-weight: normal;
+
+    margin: 22px 0;
+}
+
+
+.intro p {
+
+    color: #777;
+
+    line-height: 2;
+
+    font-size: 15px;
+}
+
+
+
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.experience-bg {
+
+    background: #f4f5f1;
+}
+
+
+.experience-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.experience-card {
+
+    background: white;
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+
+.experience-image {
+
+    height: 350px;
+
+    overflow: hidden;
+}
+
+
+.experience-image img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s;
+}
+
+
+.experience-card:hover img {
+
+    transform: scale(1.07);
+}
+
+
+.experience-text {
+
+    padding: 30px;
+}
+
+
+.experience-text .eng {
+
+    color: #718477;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.experience-text h3 {
+
+    font-size: 22px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.experience-text p {
+
+    color: #777;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+.more {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    border-bottom: 1px solid #333;
+
+    padding-bottom: 3px;
+}
+
+
+
+/* =====================================================
+   SPA SECTION
+===================================================== */
+
+.spa-section {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    min-height: 650px;
+}
+
+
+.spa-image {
+
+    background:
+
+        url(
+        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+        );
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.spa-content {
+
+    background: #293a31;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 90px;
+}
+
+
+.spa-content .small {
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    color: #b6c5bb;
+}
+
+
+.spa-content h2 {
+
+    font-size: 43px;
+
+    font-weight: 300;
+
+    line-height: 1.4;
+
+    margin: 20px 0 30px;
+}
+
+
+.spa-content p {
+
+    line-height: 2;
+
+    color: #d2dad5;
+
+    font-weight: 300;
+}
+
+
+.white-more {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding-bottom: 5px;
+
+    border-bottom: 1px solid white;
+}
+
+
+
+/* =====================================================
+   EVENT
+===================================================== */
+
+.event-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.event-card {
+
+    cursor: pointer;
+}
+
+
+.event-image {
+
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.event-image img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+.event-card:hover img {
+
+    transform: scale(1.05);
+}
+
+
+.event-card h3 {
+
+    margin-top: 20px;
+
+    font-size: 19px;
+
+    font-weight: 500;
+}
+
+
+.event-card p {
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-top: 10px;
+}
+
+
+
+/* =====================================================
+   PACKAGE
+===================================================== */
+
+.package {
+
+    width: 100%;
+
+    height: 520px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.05)
+        ),
+
+        url(
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=90"
+        );
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.package-inner {
+
+    width: 1200px;
+
+    margin: auto;
+}
+
+
+.package .small {
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+}
+
+
+.package h2 {
+
+    font-size: 45px;
+
+    font-weight: 300;
+
+    margin: 18px 0;
+}
+
+
+.package p {
+
+    line-height: 1.8;
+
+    font-weight: 300;
+}
+
+
+
+/* =====================================================
+   STORY + NEWS
+===================================================== */
+
+.information {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 90px;
+}
+
+
+.info-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 2px solid #222;
+}
+
+
+.info-title h2 {
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+
+.info-title a {
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+
+.story-item {
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.story-item h3 {
+
+    font-size: 17px;
+
+    font-weight: 400;
+}
+
+
+.story-item p {
+
+    font-size: 13px;
+
+    color: #aaa;
+
+    margin-top: 8px;
+}
+
+
+.news-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 14px;
+}
+
+
+.news-item:hover .news-name {
+
+    text-decoration: underline;
+}
+
+
+.news-date {
+
+    color: #aaa;
+
+    font-size: 12px;
+}
+
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-bg {
+
+    background: #f5f4ef;
+}
+
+
+.location-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.location-card {
+
+    background: white;
+}
+
+
+.location-image {
+
+    height: 260px;
+
+    overflow: hidden;
+}
+
+
+.location-image img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+
+.location-card:hover img {
+
+    transform: scale(1.05);
+}
+
+
+.location-text {
+
+    padding: 25px;
+}
+
+
+.location-text h3 {
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+.location-text p {
+
+    color: #888;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   MEMBERSHIP
+===================================================== */
+
+.membership {
+
+    padding: 140px 20px;
+
+    text-align: center;
+
+    background: #35473d;
+
+    color: white;
+}
+
+
+.membership .small {
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #b8c5bd;
+}
+
+
+.membership h2 {
+
+    font-size: 40px;
+
+    font-weight: 300;
+
+    margin: 20px 0 30px;
+}
+
+
+.membership p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    line-height: 2;
+
+    color: #d1d9d4;
+}
+
+
+.member-btn {
+
+    display: inline-block;
+
+    border: 1px solid white;
+
+    padding: 13px 30px;
+
+    margin-top: 35px;
+}
+
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    background: #202520;
+
+    color: #999;
+
+    padding: 55px 0;
+}
+
+
+.footer-inner {
+
+    width: 1200px;
+
+    margin: auto;
+}
+
+
+.footer-logo {
+
+    color: white;
+
+    font-size: 21px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+.footer-menu {
+
+    display: flex;
+
+    gap: 20px;
+
+    font-size: 12px;
+
+    color: #ccc;
+
+    margin-bottom: 25px;
+}
+
+
+footer p {
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+
+
+/* =====================================================
+   TOP 버튼
+===================================================== */
+
+.top-btn {
+
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    width: 50px;
+
+    height: 50px;
+
+    border: none;
+
+    background: #315743;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+
+/* =====================================================
+   반응형
+===================================================== */
+
+@media(max-width: 800px) {
+
+    .header-inner,
+    .section,
+    .package-inner,
+    .footer-inner,
+    .visual-text {
+
+        width: 90%;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+    }
+
+
+    .main-visual {
+
+        height: 650px;
+
+    }
+
+
+    .main-copy h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .experience-grid,
+    .event-grid,
+    .location-grid,
+    .information,
+    .spa-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .spa-image {
+
+        min-height: 400px;
+
+    }
+
+
+    .spa-content {
+
+        padding: 60px 30px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="header-inner">
+
+
+    <!-- 로고를 누르면 메인 -->
+
+    <a href="main.html"
+       class="logo">
+
+        FOREST STAY
+
+    </a>
+
+
+
+    <nav>
+
+        <a href="#forest">
+            FOREST
+        </a>
+
+        <a href="#spa">
+            SPA
+        </a>
+
+        <a href="#room">
+            ROOM
+        </a>
+
+        <a href="#experience">
+            EXPERIENCE
+        </a>
+
+
+        <!-- ★ 기존 게시판 연결 -->
+
+        <a href="news_list.html">
+            NEWS
+        </a>
+
+    </nav>
+
+
+
+    <a href="#"
+       class="reservation">
+
+        RESERVATION
+
+    </a>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN VISUAL
+===================================================== -->
+
+<section class="main-visual">
+
+
+<div class="main-copy">
+
+
+    <div class="small">
+
+        PRIVATE FOREST RESORT
+
+    </div>
+
+
+    <h1>
+
+        FOREST STAY
+
+    </h1>
+
+
+    <p>
+
+        숲이 들려주는 가장 편안한 이야기<br>
+
+        자연 속에서 온전한 휴식을 만나보세요.
+
+    </p>
+
+
+</div>
+
+
+
+<div class="scroll">
+
+    SCROLL DOWN
+
+    <div class="scroll-line"></div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro"
+         id="forest">
+
+
+    <div class="small">
+
+        THE FOREST
+
+    </div>
+
+
+    <h2>
+
+        Rest in Nature
+
+    </h2>
+
+
+    <p>
+
+        깊은 숲 속에 자리한 FOREST STAY.<br>
+
+        나무 사이로 스며드는 햇살과
+        계절마다 달라지는 숲의 향기를 느끼며<br>
+
+        일상의 속도를 잠시 내려놓는
+        특별한 휴식을 경험해 보세요.
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<div class="experience-bg"
+     id="experience">
+
+
+<section class="section">
+
+
+    <div class="section-title">
+
+
+        <div class="eng">
+
+            SPECIAL EXPERIENCE
+
+        </div>
+
+
+        <h2>
+
+            숲에서 만나는 특별한 경험
+
+        </h2>
+
+
+        <p>
+
+            자연과 함께 머무는 순간을
+            더욱 특별하게 만들어드립니다.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="experience-grid">
+
+
+        <!-- 카드1 -->
+
+        <div class="experience-card">
+
+
+            <div class="experience-image">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85"
+                    alt="숲"
+                >
+
+
+            </div>
+
+
+            <div class="experience-text">
+
+
+                <div class="eng">
+
+                    FOREST WALK
+
+                </div>
+
+
+                <h3>
+
+                    숲속 산책
+
+                </h3>
+
+
+                <p>
+
+                    깊은 숲길을 천천히 걸으며
+                    자연의 소리와 향기를 느껴보세요.
+
+                </p>
+
+
+                <a href="#"
+                   class="more">
+
+                    자세히 보기
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 카드2 -->
+
+        <div class="experience-card">
+
+
+            <div class="experience-image">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1000&q=85"
+                    alt="스파"
+                >
+
+
+            </div>
+
+
+            <div class="experience-text">
+
+
+                <div class="eng">
+
+                    FOREST SPA
+
+                </div>
+
+
+                <h3>
+
+                    프라이빗 스파
+
+                </h3>
+
+
+                <p>
+
+                    숲을 바라보며 즐기는
+                    따뜻한 스파에서 깊은 휴식을 만나보세요.
+
+                </p>
+
+
+                <a href="#spa"
+                   class="more">
+
+                    자세히 보기
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 카드3 -->
+
+        <div class="experience-card">
+
+
+            <div class="experience-image">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85"
+                    alt="자연"
+                >
+
+
+            </div>
+
+
+            <div class="experience-text">
+
+
+                <div class="eng">
+
+                    WELLNESS
+
+                </div>
+
+
+                <h3>
+
+                    데일리 웰니스
+
+                </h3>
+
+
+                <p>
+
+                    자연 속 움직임과 명상을 통해
+                    몸과 마음의 균형을 찾아보세요.
+
+                </p>
+
+
+                <a href="#"
+                   class="more">
+
+                    자세히 보기
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================================
+     SPA
+===================================================== -->
+
+<section class="spa-section"
+         id="spa">
+
+
+    <div class="spa-image"></div>
+
+
+
+    <div class="spa-content">
+
+
+        <div>
+
+
+            <div class="small">
+
+                SPA & WELLNESS
+
+            </div>
+
+
+            <h2>
+
+                자연을 바라보며<br>
+
+                즐기는 깊은 휴식
+
+            </h2>
+
+
+            <p>
+
+                따뜻한 물에 몸을 맡기고
+                창밖으로 펼쳐지는 숲을 바라보세요.<br>
+
+                자연의 온도와 향기,
+                그리고 고요함이
+                새로운 휴식을 선물합니다.
+
+            </p>
+
+
+            <a href="#"
+               class="white-more">
+
+                자세히 보기
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     EVENT
+===================================================== -->
+
+<section class="section">
+
+
+    <div class="section-title">
+
+
+        <div class="eng">
+
+            EVENT
+
+        </div>
+
+
+        <h2>
+
+            Special Event
+
+        </h2>
+
+
+        <p>
+
+            FOREST STAY에서 준비한
+            특별한 이벤트를 만나보세요.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="event-grid">
+
+
+        <div class="event-card">
+
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1000&q=85"
+                    alt="가을 숲"
+                >
+
+            </div>
+
+
+            <h3>
+
+                가을 숲 힐링 프로그램
+
+            </h3>
+
+
+            <p>
+
+                이용기간 : 2026.09.01 ~ 2026.11.30
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="event-card">
+
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=85"
+                    alt="숲길"
+                >
+
+            </div>
+
+
+            <h3>
+
+                포레스트 나이트 워크
+
+            </h3>
+
+
+            <p>
+
+                이용기간 : 2026.09.15 ~ 종료시까지
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="event-card">
+
+
+            <div class="event-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85"
+                    alt="자연"
+                >
+
+            </div>
+
+
+            <h3>
+
+                자연 속 웰니스 클래스
+
+            </h3>
+
+
+            <p>
+
+                이용기간 : 상시운영
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PACKAGE
+===================================================== -->
+
+<section class="package"
+         id="room">
+
+
+<div class="package-inner">
+
+
+    <div class="small">
+
+        FOREST PACKAGE
+
+    </div>
+
+
+    <h2>
+
+        All Inclusive Forest
+
+    </h2>
+
+
+    <p>
+
+        객실과 조식,
+        스파 그리고 숲속 프로그램까지.<br>
+
+        온전한 휴식을 위한
+        FOREST STAY 시그니처 패키지를 만나보세요.
+
+    </p>
+
+
+    <a href="#"
+       class="white-more">
+
+        패키지 자세히 보기
+
+    </a>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STORY + NEWS
+===================================================== -->
+
+<section class="section">
+
+
+<div class="information">
+
+
+    <!-- STORY -->
+
+    <div>
+
+
+        <div class="info-title">
+
+
+            <h2>
+
+                STORY
+
+            </h2>
+
+
+            <a href="#">
+
+                MORE +
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="story-item">
+
+            <h3>
+
+                숲이 가장 아름다운 시간
+
+            </h3>
+
+            <p>
+                2026.09.10
+            </p>
+
+        </div>
+
+
+
+        <div class="story-item">
+
+            <h3>
+
+                자연 속에서 발견한 작은 휴식
+
+            </h3>
+
+            <p>
+                2026.08.21
+            </p>
+
+        </div>
+
+
+
+        <div class="story-item">
+
+            <h3>
+
+                여름밤 포레스트 이야기
+
+            </h3>
+
+            <p>
+                2026.08.05
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- NEWS -->
+
+    <div>
+
+
+        <div class="info-title">
+
+
+            <h2>
+
+                NEWS
+
+            </h2>
+
+
+            <!-- ★ 게시판으로 이동 -->
+
+            <a href="news_list.html">
+
+                MORE +
+
+            </a>
+
+
+        </div>
+
+
+
+        <a href="news_view.html"
+           class="news-item">
+
+
+            <span class="news-name">
+
+                조식 메뉴 개편 및 이용요금 변경 안내
+
+            </span>
+
+
+            <span class="news-date">
+
+                2026.09.16
+
+            </span>
+
+
+        </a>
+
+
+
+        <a href="news_view.html"
+           class="news-item">
+
+
+            <span class="news-name">
+
+                숲속 웰니스 프로그램 운영 안내
+
+            </span>
+
+
+            <span class="news-date">
+
+                2026.09.10
+
+            </span>
+
+
+        </a>
+
+
+
+        <a href="news_view.html"
+           class="news-item">
+
+
+            <span class="news-name">
+
+                가을 포레스트 패키지 출시
+
+            </span>
+
+
+            <span class="news-date">
+
+                2026.09.01
+
+            </span>
+
+
+        </a>
+
+
+
+        <a href="news_view.html"
+           class="news-item">
+
+
+            <span class="news-name">
+
+                스파 시설 정기 점검 안내
+
+            </span>
+
+
+            <span class="news-date">
+
+                2026.08.25
+
+            </span>
+
+
+        </a>
+
+
+
+        <a href="news_view.html"
+           class="news-item">
+
+
+            <span class="news-name">
+
+                친환경 어메니티 리뉴얼 안내
+
+            </span>
+
+
+            <span class="news-date">
+
+                2026.08.12
+
+            </span>
+
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     주변 관광지
+===================================================== -->
+
+<div class="location-bg">
+
+
+<section class="section">
+
+
+    <div class="section-title">
+
+
+        <div class="eng">
+
+            AROUND FOREST
+
+        </div>
+
+
+        <h2>
+
+            주변 관광지
+
+        </h2>
+
+
+        <p>
+
+            FOREST STAY와 함께
+            주변의 아름다운 자연도 만나보세요.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="location-grid">
+
+
+        <!-- 1 -->
+
+        <div class="location-card">
+
+
+            <div class="location-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+                    alt="호수"
+                >
+
+            </div>
+
+
+            <div class="location-text">
+
+
+                <h3>
+
+                    포레스트 호수
+
+                </h3>
+
+
+                <p>
+
+                    잔잔한 물과 숲이 어우러지는
+                    아름다운 산책 명소입니다.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 2 -->
+
+        <div class="location-card">
+
+
+            <div class="location-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1000&q=85"
+                    alt="산"
+                >
+
+            </div>
+
+
+            <div class="location-text">
+
+
+                <h3>
+
+                    포레스트 마운틴
+
+                </h3>
+
+
+                <p>
+
+                    계절마다 다른 풍경을 보여주는
+                    자연 속 트레킹 코스입니다.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 3 -->
+
+        <div class="location-card">
+
+
+            <div class="location-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1443632864897-14973fa006cf?auto=format&fit=crop&w=1000&q=85"
+                    alt="숲"
+                >
+
+            </div>
+
+
+            <div class="location-text">
+
+
+                <h3>
+
+                    비밀의 숲
+
+                </h3>
+
+
+                <p>
+
+                    조용한 숲길을 걸으며
+                    자연을 가까이 느낄 수 있습니다.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+</div>
+
+
+
+<!-- =====================================================
+     MEMBERSHIP
+===================================================== -->
+
+<section class="membership">
+
+
+    <div class="small">
+
+        MEMBERSHIP
+
+    </div>
+
+
+    <h2>
+
+        FOREST STAY 특별회원
+
+    </h2>
+
+
+    <p>
+
+        숲과 스파,
+        객실과 다양한 웰니스 프로그램까지
+        FOREST STAY 회원만을 위한
+        특별한 혜택을 경험해 보세요.
+
+    </p>
+
+
+    <a href="#"
+       class="member-btn">
+
+        회원 혜택 자세히 보기
+
+    </a>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div class="footer-inner">
+
+
+    <div class="footer-logo">
+
+        FOREST STAY
+
+    </div>
+
+
+
+    <div class="footer-menu">
+
+        <a href="#">
+            회사소개
+        </a>
+
+        <a href="#">
+            오시는길
+        </a>
+
+        <a href="#">
+            개인정보처리방침
+        </a>
+
+        <a href="#">
+            이용약관
+        </a>
+
+    </div>
+
+
+
+    <p>
+
+        FOREST STAY | 자연과 쉼이 만나는 프라이빗 포레스트 리조트<br>
+
+        대표번호 : 000-000-0000
+        &nbsp;&nbsp;
+        예약문의 : 0000-0000
+
+    </p>
+
+
+</div>
+
+
+</footer>
+
+
+
+<!-- TOP 버튼 -->
+
+<button
+    class="top-btn"
+    onclick="goTop()">
+
+    TOP
+
+</button>
+
+
+
+<script>
+
+
+/* =============================================
+   TOP 버튼 클릭
+============================================= */
+
+function goTop() {
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

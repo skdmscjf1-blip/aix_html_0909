@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var name = "유관순";    // 변수선언 - 옛날버전
+        let name2 = "강감찬" ; //변수선언 - 최근버전
+        const name3 = "김구"; //상수 : 처음값을 변경할수 없음.
+        name4 = "김유신"
+        console.log("이름 : "+name4)
+
+        function btn(){
+            alert("div : "+document.getElementById("d01").innerText);
+           // document.getElementById("id").value = "홍길동";
+            kor = document.getElementById("kor").value 
+            eng = document.getElementById("eng").value // Number() , parseInt() , parsefloat()
+            document.getElementById("total").value= Number(kor)+Number(eng)
+        }
+    </script>
+    <div id="d01">85</div>
+    <label>국어</label>
+    <input type="text" name="kor" id="kor"><br>
+    <label>영어</label>
+    <input type="text" name="eng" id="eng"><br>
+    <button type="button" onclick="btn()">저장</button>
+    <br>
+    <label>합계</label>
+    <input type="text" name="total" id="total"><br>
+</body>
+</html>

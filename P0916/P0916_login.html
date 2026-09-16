@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FOREST STAY - 회원가입</title>
+
+    <!-- 구글 폰트 -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =====================================================
+           기본 설정
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+            color: #222;
+            background: #fff;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+            width: 100%;
+            height: 90px;
+
+            border-bottom: 1px solid #eee;
+
+            background: white;
+        }
+
+
+        .header-inner {
+            width: 1200px;
+            height: 100%;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            font-size: 25px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+        }
+
+
+        nav {
+            display: flex;
+
+            gap: 42px;
+        }
+
+
+        nav a {
+            font-size: 15px;
+        }
+
+
+        nav a:hover {
+            color: #52705e;
+        }
+
+
+        .header-right {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            font-size: 13px;
+        }
+
+
+        .reservation {
+            border: 1px solid #315743;
+
+            color: #315743;
+
+            padding: 10px 18px;
+        }
+
+
+
+        /* =====================================================
+           상단 제목
+        ===================================================== */
+
+        .sub-visual {
+            height: 250px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.35)
+                ),
+
+                url(
+                    "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1800&q=85"
+                );
+
+            background-size: cover;
+
+            background-position: center;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+
+        .sub-visual h1 {
+            font-size: 42px;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+        }
+
+
+        .sub-visual p {
+            margin-top: 12px;
+
+            font-size: 14px;
+
+            font-weight: 300;
+        }
+
+
+
+        /* =====================================================
+           전체 회원가입 영역
+        ===================================================== */
+
+        .join-container {
+            width: 900px;
+
+            margin: 80px auto 120px;
+        }
+
+
+
+        /* =====================================================
+           제목
+        ===================================================== */
+
+        .join-title {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+
+        .join-title h2 {
+            font-size: 36px;
+
+            font-weight: 500;
+
+            margin-bottom: 13px;
+        }
+
+
+        .join-title p {
+            color: #888;
+
+            font-size: 14px;
+        }
+
+
+
+        /* =====================================================
+           회원가입 단계
+        ===================================================== */
+
+        .join-step {
+            display: flex;
+
+            margin-bottom: 70px;
+        }
+
+
+        .step {
+            flex: 1;
+
+            text-align: center;
+
+            padding-bottom: 18px;
+
+            border-bottom: 2px solid #ddd;
+
+            color: #aaa;
+
+            font-size: 14px;
+        }
+
+
+        .step span {
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 5px;
+        }
+
+
+        .step.active {
+            border-color: #315743;
+
+            color: #315743;
+
+            font-weight: 600;
+        }
+
+
+
+        /* =====================================================
+           회원 정보 제목
+        ===================================================== */
+
+        .form-title {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            padding-bottom: 15px;
+
+            border-bottom: 2px solid #222;
+        }
+
+
+        .form-title h3 {
+            font-size: 22px;
+
+            font-weight: 500;
+        }
+
+
+        .required-text {
+            font-size: 12px;
+
+            color: #999;
+        }
+
+
+        .required {
+            color: #b75050;
+        }
+
+
+
+        /* =====================================================
+           입력 행
+        ===================================================== */
+
+        .form-row {
+            display: flex;
+
+            min-height: 75px;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .form-label {
+            width: 180px;
+
+            background: #f7f7f5;
+
+            padding: 25px 20px;
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+
+        .form-input {
+            flex: 1;
+
+            padding: 17px 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+        }
+
+
+        .form-input input,
+        .form-input select {
+            height: 42px;
+
+            border: 1px solid #ccc;
+
+            padding: 0 12px;
+
+            outline: none;
+
+            font-size: 14px;
+        }
+
+
+        .form-input input:focus,
+        .form-input select:focus {
+            border-color: #315743;
+        }
+
+
+        .normal-input {
+            width: 330px;
+        }
+
+
+        .short-input {
+            width: 150px;
+        }
+
+
+        .email-input {
+            width: 190px;
+        }
+
+
+        .address-input {
+            width: 100%;
+        }
+
+
+        .input-message {
+            font-size: 12px;
+
+            color: #999;
+        }
+
+
+
+        /* =====================================================
+           중복확인 / 인증 버튼
+        ===================================================== */
+
+        .small-btn {
+            height: 42px;
+
+            border: 1px solid #555;
+
+            background: white;
+
+            padding: 0 16px;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+        }
+
+
+        .small-btn:hover {
+            background: #555;
+
+            color: white;
+        }
+
+
+
+        /* =====================================================
+           주소
+        ===================================================== */
+
+        .address-box {
+            width: 100%;
+        }
+
+
+        .address-top {
+            display: flex;
+
+            gap: 8px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .address-top input {
+            width: 180px;
+        }
+
+
+        .address-box > input {
+            margin-bottom: 8px;
+        }
+
+
+
+        /* =====================================================
+           성별
+        ===================================================== */
+
+        .radio-group {
+            display: flex;
+
+            gap: 30px;
+        }
+
+
+        .radio-group label {
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            cursor: pointer;
+        }
+
+
+        .radio-group input {
+            width: auto;
+            height: auto;
+        }
+
+
+
+        /* =====================================================
+           약관
+        ===================================================== */
+
+        .terms-section {
+            margin-top: 65px;
+        }
+
+
+        .terms-section h3 {
+            font-size: 22px;
+
+            font-weight: 500;
+
+            padding-bottom: 15px;
+
+            border-bottom: 2px solid #222;
+        }
+
+
+        .all-agree {
+            padding: 22px;
+
+            background: #f5f6f4;
+
+            border-bottom: 1px solid #ddd;
+
+            font-weight: 500;
+        }
+
+
+        .agree-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 20px;
+
+            border-bottom: 1px solid #ddd;
+
+            font-size: 14px;
+        }
+
+
+        .agree-row label,
+        .all-agree label {
+            cursor: pointer;
+        }
+
+
+        .terms-view {
+            border: none;
+
+            background: none;
+
+            color: #777;
+
+            text-decoration: underline;
+
+            cursor: pointer;
+        }
+
+
+
+        /* =====================================================
+           하단 버튼
+        ===================================================== */
+
+        .join-buttons {
+            text-align: center;
+
+            margin-top: 60px;
+        }
+
+
+        .cancel-btn,
+        .join-btn {
+            width: 180px;
+
+            height: 55px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+
+        .cancel-btn {
+            border: 1px solid #999;
+
+            background: white;
+
+            color: #555;
+        }
+
+
+        .join-btn {
+            border: 1px solid #315743;
+
+            background: #315743;
+
+            color: white;
+
+            margin-left: 8px;
+        }
+
+
+        .join-btn:hover {
+            background: #203c2e;
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #202520;
+
+            color: #999;
+
+            padding: 55px 0;
+        }
+
+
+        .footer-inner {
+            width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .footer-logo {
+            color: white;
+
+            font-size: 21px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .footer-menu {
+            display: flex;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+
+            font-size: 12px;
+
+            color: #ccc;
+        }
+
+
+        footer p {
+            font-size: 12px;
+
+            line-height: 2;
+        }
+
+
+
+        /* =====================================================
+           모바일
+        ===================================================== */
+
+        @media(max-width: 800px) {
+
+            .header-inner,
+            .join-container,
+            .footer-inner {
+                width: 90%;
+            }
+
+
+            nav {
+                display: none;
+            }
+
+
+            .header-right .login,
+            .header-right .join {
+                display: none;
+            }
+
+
+            .form-row {
+                display: block;
+            }
+
+
+            .form-label {
+                width: 100%;
+
+                padding: 15px;
+
+                background: #f7f7f5;
+            }
+
+
+            .form-input {
+                padding: 15px;
+
+                flex-wrap: wrap;
+            }
+
+
+            .normal-input {
+                width: 100%;
+            }
+
+
+            .join-step {
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-inner">
+
+
+        <!-- 메인으로 이동 -->
+
+        <a href="main.html"
+           class="logo">
+
+            FOREST STAY
+
+        </a>
+
+
+
+        <nav>
+
+            <a href="main.html#forest">
+                FOREST
+            </a>
+
+            <a href="main.html#spa">
+                SPA
+            </a>
+
+            <a href="main.html#room">
+                ROOM
+            </a>
+
+            <a href="main.html#experience">
+                EXPERIENCE
+            </a>
+
+            <a href="news_list.html">
+                NEWS
+            </a>
+
+        </nav>
+
+
+
+        <div class="header-right">
+
+            <a href="#"
+               class="login">
+
+                로그인
+
+            </a>
+
+
+            <a href="join.html"
+               class="join">
+
+                회원가입
+
+            </a>
+
+
+            <a href="#"
+               class="reservation">
+
+                RESERVATION
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     상단 이미지
+===================================================== -->
+
+<section class="sub-visual">
+
+    <div>
+
+        <h1>
+            JOIN
+        </h1>
+
+        <p>
+            FOREST STAY 회원가입
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     회원가입
+===================================================== -->
+
+<main class="join-container">
+
+
+    <!-- 제목 -->
+
+    <div class="join-title">
+
+        <h2>
+            회원가입
+        </h2>
+
+        <p>
+            FOREST STAY의 다양한 서비스와
+            특별한 혜택을 만나보세요.
+        </p>
+
+    </div>
+
+
+
+    <!-- =================================================
+         회원가입 단계
+    ================================================= -->
+
+    <div class="join-step">
+
+
+        <div class="step">
+
+            <span>
+                STEP 01
+            </span>
+
+            약관동의
+
+        </div>
+
+
+        <div class="step active">
+
+            <span>
+                STEP 02
+            </span>
+
+            정보입력
+
+        </div>
+
+
+        <div class="step">
+
+            <span>
+                STEP 03
+            </span>
+
+            가입완료
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         FORM
+    ================================================= -->
+
+    <form
+        id="joinForm"
+        onsubmit="joinComplete(event)"
+    >
+
+
+        <div class="form-title">
+
+            <h3>
+                회원정보 입력
+            </h3>
+
+            <div class="required-text">
+
+                <span class="required">*</span>
+
+                필수입력 항목
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 아이디 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                아이디
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <input
+                    type="text"
+                    id="userId"
+                    class="normal-input"
+                    placeholder="아이디를 입력해 주세요"
+                    required
+                >
+
+
+                <button
+                    type="button"
+                    class="small-btn"
+                    onclick="checkId()"
+                >
+
+                    중복확인
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 비밀번호 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                비밀번호
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <input
+                    type="password"
+                    id="password"
+                    class="normal-input"
+                    placeholder="비밀번호를 입력해 주세요"
+                    required
+                >
+
+
+                <span class="input-message">
+
+                    영문, 숫자를 포함하여 8자 이상
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 비밀번호 확인 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                비밀번호 확인
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <input
+                    type="password"
+                    id="passwordCheck"
+                    class="normal-input"
+                    placeholder="비밀번호를 다시 입력해 주세요"
+                    required
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 이름 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                이름
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <input
+                    type="text"
+                    id="userName"
+                    class="normal-input"
+                    placeholder="이름을 입력해 주세요"
+                    required
+                >
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 생년월일 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                생년월일
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <select
+                    id="birthYear"
+                    class="short-input"
+                    required
+                >
+
+                    <option value="">
+                        년
+                    </option>
+
+                    <option>
+                        2000
+                    </option>
+
+                    <option>
+                        1999
+                    </option>
+
+                    <option>
+                        1998
+                    </option>
+
+                    <option>
+                        1997
+                    </option>
+
+                    <option>
+                        1996
+                    </option>
+
+                    <option>
+                        1995
+                    </option>
+
+                    <option>
+                        1990
+                    </option>
+
+                    <option>
+                        1985
+                    </option>
+
+                    <option>
+                        1980
+                    </option>
+
+                </select>
+
+
+
+                <select
+                    id="birthMonth"
+                    class="short-input"
+                    required
+                >
+
+                    <option value="">
+                        월
+                    </option>
+
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+
+                </select>
+
+
+
+                <select
+                    id="birthDay"
+                    class="short-input"
+                    required
+                >
+
+                    <option value="">
+                        일
+                    </option>
+
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>20</option>
+                    <option>25</option>
+                    <option>30</option>
+                    <option>31</option>
+
+                </select>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 성별 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                성별
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <div class="radio-group">
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="male"
+                        >
+
+                        남성
+
+                    </label>
+
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="gender"
+                            value="female"
+                        >
+
+                        여성
+
+                    </label>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 휴대전화 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                휴대전화
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <select class="short-input">
+
+                    <option>
+                        010
+                    </option>
+
+                    <option>
+                        011
+                    </option>
+
+                </select>
+
+
+                -
+
+
+                <input
+                    type="text"
+                    class="short-input"
+                    maxlength="4"
+                >
+
+
+                -
+
+
+                <input
+                    type="text"
+                    class="short-input"
+                    maxlength="4"
+                >
+
+
+                <button
+                    type="button"
+                    class="small-btn"
+                    onclick="phoneCheck()"
+                >
+
+                    인증번호 받기
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 이메일 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                이메일
+
+                <span class="required">
+                    *
+                </span>
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <input
+                    type="text"
+                    class="email-input"
+                    required
+                >
+
+
+                @
+
+
+                <input
+                    type="text"
+                    id="emailDomain"
+                    class="email-input"
+                    required
+                >
+
+
+                <select
+                    class="email-input"
+                    onchange="changeEmail(this)"
+                >
+
+                    <option value="">
+                        직접입력
+                    </option>
+
+                    <option value="naver.com">
+                        naver.com
+                    </option>
+
+                    <option value="gmail.com">
+                        gmail.com
+                    </option>
+
+                    <option value="daum.net">
+                        daum.net
+                    </option>
+
+                    <option value="hanmail.net">
+                        hanmail.net
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- 주소 -->
+
+        <div class="form-row">
+
+
+            <div class="form-label">
+
+                주소
+
+            </div>
+
+
+            <div class="form-input">
+
+
+                <div class="address-box">
+
+
+                    <div class="address-top">
+
+
+                        <input
+                            type="text"
+                            id="zipcode"
+                            placeholder="우편번호"
+                            readonly
+                        >
+
+
+                        <button
+                            type="button"
+                            class="small-btn"
+                            onclick="findAddress()"
+                        >
+
+                            우편번호 찾기
+
+                        </button>
+
+
+                    </div>
+
+
+                    <input
+                        type="text"
+                        id="address"
+                        class="address-input"
+                        placeholder="주소"
+                        readonly
+                    >
+
+
+                    <input
+                        type="text"
+                        class="address-input"
+                        placeholder="상세주소를 입력해 주세요"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             약관
+        ================================================= -->
+
+        <section class="terms-section">
+
+
+            <h3>
+                약관동의
+            </h3>
+
+
+
+            <!-- 전체 동의 -->
+
+            <div class="all-agree">
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="agreeAll"
+                        onclick="checkAll()"
+                    >
+
+                    전체 약관에 동의합니다.
+
+                </label>
+
+
+            </div>
+
+
+
+            <!-- 이용약관 -->
+
+            <div class="agree-row">
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        class="agree"
+                        id="agree1"
+                    >
+
+                    <span class="required">
+                        [필수]
+                    </span>
+
+                    서비스 이용약관 동의
+
+                </label>
+
+
+                <button
+                    type="button"
+                    class="terms-view"
+                    onclick="viewTerms('서비스 이용약관')"
+                >
+
+                    내용보기
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- 개인정보 -->
+
+            <div class="agree-row">
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        class="agree"
+                        id="agree2"
+                    >
+
+                    <span class="required">
+                        [필수]
+                    </span>
+
+                    개인정보 수집 및 이용 동의
+
+                </label>
+
+
+                <button
+                    type="button"
+                    class="terms-view"
+                    onclick="viewTerms('개인정보 수집 및 이용')"
+                >
+
+                    내용보기
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- 마케팅 -->
+
+            <div class="agree-row">
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        class="agree"
+                    >
+
+                    [선택]
+
+                    이벤트 및 마케팅 정보 수신 동의
+
+                </label>
+
+
+                <button
+                    type="button"
+                    class="terms-view"
+                    onclick="viewTerms('마케팅 정보 수신')"
+                >
+
+                    내용보기
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             가입 버튼
+        ================================================= -->
+
+        <div class="join-buttons">
+
+
+            <button
+                type="button"
+                class="cancel-btn"
+                onclick="location.href='main.html'"
+            >
+
+                취소
+
+            </button>
+
+
+
+            <button
+                type="submit"
+                class="join-btn"
+            >
+
+                회원가입
+
+            </button>
+
+
+        </div>
+
+
+    </form>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-inner">
+
+
+        <div class="footer-logo">
+
+            FOREST STAY
+
+        </div>
+
+
+        <div class="footer-menu">
+
+            <a href="#">
+                회사소개
+            </a>
+
+            <a href="#">
+                오시는길
+            </a>
+
+            <a href="#">
+                개인정보처리방침
+            </a>
+
+            <a href="#">
+                이용약관
+            </a>
+
+        </div>
+
+
+        <p>
+
+            FOREST STAY |
+            자연과 쉼이 만나는 프라이빗 포레스트 리조트
+
+            <br>
+
+            대표번호 : 000-000-0000
+            &nbsp;&nbsp;
+
+            예약문의 : 0000-0000
+
+        </p>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   아이디 중복확인
+===================================================== */
+
+function checkId() {
+
+
+    let userId =
+        document
+            .getElementById("userId")
+            .value;
+
+
+    if (userId == "") {
+
+
+        alert(
+            "아이디를 입력해 주세요."
+        );
+
+
+        return;
+
+    }
+
+
+    alert(
+        "사용 가능한 아이디입니다."
+    );
+
+}
+
+
+
+/* =====================================================
+   휴대전화 인증
+===================================================== */
+
+function phoneCheck() {
+
+
+    alert(
+        "인증번호가 발송되었습니다."
+    );
+
+}
+
+
+
+/* =====================================================
+   이메일 선택
+===================================================== */
+
+function changeEmail(select) {
+
+
+    let domain =
+        document
+            .getElementById(
+                "emailDomain"
+            );
+
+
+    domain.value =
+        select.value;
+
+}
+
+
+
+/* =====================================================
+   주소 찾기
+===================================================== */
+
+function findAddress() {
+
+
+    /*
+        실제 다음 주소 API를 연결하기 전
+        연습용 코드입니다.
+    */
+
+
+    document
+        .getElementById("zipcode")
+        .value = "04300";
+
+
+    document
+        .getElementById("address")
+        .value =
+        "서울특별시 용산구 예시로 100";
+
+
+}
+
+
+
+/* =====================================================
+   전체 약관 동의
+===================================================== */
+
+function checkAll() {
+
+
+    let all =
+        document
+            .getElementById("agreeAll");
+
+
+    let agrees =
+        document
+            .querySelectorAll(".agree");
+
+
+    for (let agree of agrees) {
+
+
+        agree.checked =
+            all.checked;
+
+
+    }
+
+}
+
+
+
+/* =====================================================
+   약관 내용
+===================================================== */
+
+function viewTerms(title) {
+
+
+    alert(
+        title + " 내용을 확인합니다."
+    );
+
+}
+
+
+
+/* =====================================================
+   회원가입
+===================================================== */
+
+function joinComplete(event) {
+
+
+    /* form 기본 전송 막기 */
+
+    event.preventDefault();
+
+
+
+    /* 비밀번호 */
+
+    let password =
+        document
+            .getElementById("password")
+            .value;
+
+
+
+    /* 비밀번호 확인 */
+
+    let passwordCheck =
+        document
+            .getElementById("passwordCheck")
+            .value;
+
+
+
+    /* 비밀번호 비교 */
+
+    if (
+        password != passwordCheck
+    ) {
+
+
+        alert(
+            "비밀번호가 일치하지 않습니다."
+        );
+
+
+        return;
+
+    }
+
+
+
+    /* 비밀번호 길이 */
+
+    if (
+        password.length < 8
+    ) {
+
+
+        alert(
+            "비밀번호는 8자 이상 입력해 주세요."
+        );
+
+
+        return;
+
+    }
+
+
+
+    /* 필수 약관 확인 */
+
+    let agree1 =
+        document
+            .getElementById("agree1")
+            .checked;
+
+
+    let agree2 =
+        document
+            .getElementById("agree2")
+            .checked;
+
+
+
+    if (
+        agree1 == false ||
+        agree2 == false
+    ) {
+
+
+        alert(
+            "필수 약관에 동의해 주세요."
+        );
+
+
+        return;
+
+    }
+
+
+
+    /* 가입 완료 */
+
+    alert(
+        "FOREST STAY 회원가입이 완료되었습니다."
+    );
+
+
+
+    /* 메인페이지 이동 */
+
+    location.href =
+        "main.html";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d01"></div><br>
+    <div id="d02"></div><br>
+    <div id="d03"></div><br>
+    <script>
+        // 타입 : str , int , float , boolean , defined , null
+        // 형변환 : Number(), parseInt(), parseFloat(),toString()
+        // 몫 : parseInt(10/3)
+        document.getElementById("d01").innerText = 10/3;
+        document.getElementById("d02").innerText = "몫 : "+parseInt(10/3);
+        document.getElementById("d03").innerText = "나머지 : "+10%3;
+
+        var a = 10;
+        var b = 3;
+        var result = a>b? "a가 더 큽니다." : "b가더 큽니다.";
+        // 출력하는 방법  : console.log , document.write , alert
+        // confirm , prompt
+        console.log("콘솔 : "+result);
+        document.write("화면에 출력됩니다. : "+result);
+        alert(result); //경고창
+        if(confirm("프로그램을 종료하시겠습니까? ")){
+            console.log ("네");
+
+        }else{
+            console.log("아니오");
+
+        }
+        var num = prompt("값 입력");
+        confirm("이건뭐냐"+num)
+    </script>
+</body>
+</html>

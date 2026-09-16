@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 200px; height: 200px;
+            background: blue;
+            /*
+            animation-name: ract;
+            animation-duration: 1s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-out;
+            */
+            animation: ract 2s alternate infinite ease-out;
+        }
+        @keyframes ract{
+            from{background: blue;border: 1px solid black;}
+            to{background: skyblue; border: 3px solid blue;border-radius: 50%;}
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>
