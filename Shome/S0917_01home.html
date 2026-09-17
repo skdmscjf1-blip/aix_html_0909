@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border: 1px solid black; border-collapse: collapse;}
+        th,td{width: 80px; height: 40px;}
+
+    </style>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="이름입력"><br>
+    <input type="text" name="kor" id="kor" placeholder="국어점수"><br>
+    <input type="text" name="eng" id="eng" placeholder="영어점수"><br>
+    <input type="text" name="math" id="math" placeholder="수학점수"><br>
+    <button type="button" onclick="Btn()">확인</button>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+        </tr>
+        <tbody id="tbody">
+
+
+        </tbody>
+
+
+
+    </table>
+    <script>
+        var name_arr = [];
+        var kor_arr = [];
+        var eng_arr = [];
+        var math_arr = [];
+        var total_arr = [];
+        var avg_arr = [];
+        function Btn(){
+            var slist = document.getElementById("tbody");
+            var name = document.getElementById("name").value;
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+            var sum = kor + eng + math;
+            var average = sum /3;
+            name_arr.push(name);
+            kor_arr.push(kor);
+            eng_arr.push(eng);
+            math_arr.push(math);
+            total_arr.push(sum);
+            avg_arr.push(average);
+            document.getElementById("name").value = "";
+            document.getElementById("kor").value = "";
+            document.getElementById("eng").value = "";
+            document.getElementById("math").value = "";
+            slist.innerHTML=`
+            <tr>
+                <td>${name}</td>
+                <td>${kor}</td>
+                <td>${eng}</td>
+                <td>${math}</td>
+                <td>${sum}</td>
+                <td>${average}</td>
+            </tr>`+slist.innerHTML;
+        }
+        /*
+        var tbodyHtml=``;
+        for(var i=0;i<name_arr.length;i++){    
+        tbodyHtml+=`
+        <tr>
+            <td>${name_arr[i]}</td>
+            <td>${kor_arr[i]}</td>
+            <td>${eng_arr[i]}</td>
+            <td>${math_arr[i]}</td>
+            <td>${total_arr[i]}</td>
+            <td>${avg_arr[i]}</td>
+        </tr>
+        `;
+        }
+        document.getElementById("tbody").innerHTML = tbodyHtml;
+        */
+    </script>
+
+
+</body>
+</html>

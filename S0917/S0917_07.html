@@ -36,18 +36,22 @@
         var arr_k = [];
         var arr_e = [];
         var arr_m = [];
-        var total = []
-        var avg = []
+        var total = [];
+        var avg = [];
         function saveBtn(){
             var nlist = document.getElementById("tbody");
             var name = document.getElementById("name").value;
             var kor = Number(document.getElementById("kor").value);
             var eng = Number(document.getElementById("eng").value);
             var math = Number(document.getElementById("math").value);
+            var sum = kor + eng + math;
+            var average = sum / 3 ;
             arr.push(name);
             arr_k.push(kor);
             arr_e.push(eng);
             arr_m.push(math);
+            total.push(sum);
+            avg.push(average);
             document.getElementById("name").value = "";
             document.getElementById("kor").value = "";
             document.getElementById("eng").value = "";
@@ -56,10 +60,8 @@
             console.log(arr_k);
             console.log(arr_e);
             console.log(arr_m);
-            total = kor + eng + math;
-            avg = total / 3 ;
             //alert("test")
-            nlist.innerHTML = `<tr><td>${name}</td><td>${kor}</td><td>${eng}</td><td>${math}</td><td>${total}</td><td>${avg}</td></tr>`+nlist.innerHTML;
+            nlist.innerHTML = `<tr><td>${name}</td><td>${kor}</td><td>${eng}</td><td>${math}</td><td>${sum}</td><td>${average}</td></tr>`+nlist.innerHTML;
 
         }
 

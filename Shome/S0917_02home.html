@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border: 1px solid black; border-collapse: collapse;}
+        th,td{width: 80px;height: 40px;}
+
+    </style>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="이름입력"><br>
+    <input type="text" name="kor" id="kor" placeholder="국어점수"><br>
+    <input type="text" name="eng" id="eng" placeholder="영어점수"><br>
+    <input type="text" name="math" id="math" placeholder="수학점수"><br>
+    <button type="button" onclick="Btn()">확인</button>
+
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+        </tr>
+        <tbody id="tbody">
+
+
+        </tbody>
+
+    </table>
+
+    <script>
+        arr_n = []
+        arr_k = []
+        arr_e = []
+        arr_m = []
+        arr_t = []
+        arr_a = []
+        function Btn(){
+            var slist = document.getElementById("tbody");
+            var name = document.getElementById("name").value;
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+            var sum = kor + eng + math ; 
+            var average = sum / 3;
+            arr_n.push(name);
+            arr_k.push(kor);
+            arr_e.push(eng);
+            arr_m.push(math);
+            arr_t.push(sum);
+            arr_a.push(average);
+            document.getElementById("name").value = "";
+            document.getElementById("kor").value = "";
+            document.getElementById("eng").value = "";
+            document.getElementById("math").value = "";
+
+            console.log(name);
+            console.log(kor);
+            console.log(eng);
+            console.log(math);
+            console.log(sum);
+            console.log(average);
+            slist.innerHTML = `
+            <tr>
+                <td>${name}</td>
+                <td>${kor}</td>
+                <td>${eng}</td>
+                <td>${math}</td>
+                <td>${sum}</td>
+                <td>${average}</td>
+            </tr>`+slist.innerHTML;
+
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>
