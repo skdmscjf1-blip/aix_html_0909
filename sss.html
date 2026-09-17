@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 500px; margin: 0 auto; text-align: center;}
+        table,th,td{border: 1px solid black;border-collapse: collapse;}
+        th,td{width: 100px;height: 40px;}
+
+    </style>
+</head>
+<body>
+    <div>
+        <table id="a"></table>
+    </div>
+    <script>
+        let b = ``;
+
+        for(let i=2;i<=9;i++){
+            for(let j=1;j<=9;j++){
+                b+=`
+                    <tr>
+                        <td>${i}</td>
+                        <td>X</td>
+                        <td>${j}</td>
+                        <td>=</td>
+                        <td>${i*j}</td>
+                    </tr>`;
+            }
+        }
+        document.getElementById("a").innerHTML=b;
+
+
+
+    </script>
+
+</body>
+</html>

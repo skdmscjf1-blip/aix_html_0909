@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border:1px solid black; border-collapse: collapse;}
+        th,td{width:80px; height:40px; }
+    </style>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="이름입력"><br>
+    <input type="text" name="kor" id="kor" placeholder="국어점수입력"><br>
+    <input type="text" name="eng" id="eng" placeholder="영어점수입력"><br>
+    <input type="text" name="math" id="math" placeholder="수학점수입력"><br>
+    <br>
+    <button type="button" onclick="saveBtn()">저장</button>
+
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>합계</th>
+            <th>평균</th>
+        </tr>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script>
+        
+        var arr = [];
+        var arr_k = [];
+        var arr_e = [];
+        var arr_m = [];
+        var total = []
+        var avg = []
+        function saveBtn(){
+            var nlist = document.getElementById("tbody");
+            var name = document.getElementById("name").value;
+            var kor = Number(document.getElementById("kor").value);
+            var eng = Number(document.getElementById("eng").value);
+            var math = Number(document.getElementById("math").value);
+            arr.push(name);
+            arr_k.push(kor);
+            arr_e.push(eng);
+            arr_m.push(math);
+            document.getElementById("name").value = "";
+            document.getElementById("kor").value = "";
+            document.getElementById("eng").value = "";
+            document.getElementById("math").value = "";
+            console.log(arr);
+            console.log(arr_k);
+            console.log(arr_e);
+            console.log(arr_m);
+            total = kor + eng + math;
+            avg = total / 3 ;
+            //alert("test")
+            nlist.innerHTML = `<tr><td>${name}</td><td>${kor}</td><td>${eng}</td><td>${math}</td><td>${total}</td><td>${avg}</td></tr>`+nlist.innerHTML;
+
+        }
+
+
+        var txtHtml = ``;
+        for(var i=0;i<arr.length;i++){
+            txtHtml += `<tr>
+                <td>${arr[i]}</td>
+                <td>${arr_k[i]}</td>
+                <td>${arr_e[i]}</td>
+                <td>${arr_m[i]}</td>
+                <td>${total[i]}</td>
+                <td>${avg[i]}</td>
+                </tr>`;
+        }
+                
+        document.getElementById("tbody").innerHTML = txtHtml;
+        /*
+        var arr = [1,2]
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i]+"<br>");
+        }
+        arr.push(10);
+        arr.push(9);
+        arr.push(8);
+        console.log("배열 : "+arr);
+        arr.pop()
+        console.log("배열2 : ",arr);
+
+        console.log("길이 : ",arr.length);
+        */
+    </script>
+</body>
+</html>

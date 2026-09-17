@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{border: 1px solid black; border-collapse: collapse ;}
+        table{width: 1000px; text-align: center; box-sizing: border-box;
+        margin: 50px auto;}
+        th{background: #efefef; height: 60px;}
+        td{height: 40px;}
+
+    </style>
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col width="10%">
+            <col width="*">
+            <col width="15%">
+            <col width="15%">
+            <col width="10%">
+        </colgroup>
+        <thead>    
+            <tr><th>번호</th><th>내용</th><th>작성자</th><th>작성일</th><th>조휘수</th></tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+            
+    </table>
+
+    <script>
+        //반복문 사용 : 10번
+
+        var aaa=``;
+
+        for(var i=1;i<=10;i++)
+            aaa +=`
+            <tr><td>${i}</td><td>게시판 오픈합니다</td><td>관리자</td><td>2026-09-17</td><td>1</td></tr>        
+            `;
+        document.getElementById("tbody").innerHTML= aaa;
+
+
+
+
+
+
+        /*
+        var txtHtml = "";
+        for(var i=1;i<21;i++){
+                txtHtml+= ``;
+
+        }
+        document.getElementById("d01").innerHTML = txtHtml;
+        */
+
+    </script>
+</body>
+</html>
