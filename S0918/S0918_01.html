@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width:500px; height:200px; border:1px solid black;
+        font-size:30px; text-align: center;}
+    </style>
+</head>
+<body>
+    <h2>BTS 콘서트 남은 시간</h2>
+    <div id="screen">0</div>
+    <button type="button" onclick="getstop()">시간종료</button>
+    <script>
+        function getstop(){
+            clearInterval(timer);
+        }
+        
+        function getClock(){
+            // 객체선언 
+            // data = Date() : 파이썬 객체선언 
+            var date = new Date();
+            //document.write(date+"<br>");
+            var year = date.getFullYear()  //년도
+            var month =date.getMonth()     //월
+            var d =date.getDate()      //일
+            var day =date.getDay()       //요일
+            var hour =date.getHours()     //시간
+            var minute =date.getMinutes()   //분
+            var second =date.getSeconds()   //초
+            var today = `${year}년 ${month}월 ${d}일
+            ${hour}:${minute}:${second}`;
+            //document.write(today);
+            document.getElementById("screen").innerText= today;
+            }
+            // 매시간마다 자동실행하는 함수
+            // setInterval(함수,초) - 초 밀리세컨드
+            var timer = setInterval(getClock,1000);
+        
+        
+        
+        // 타입 : str,int,float,boolean
+        // 형변환 : Number(),parseInt(),parseFloat(),toString()
+        // 확인 : console.log(),alert(),document.write(),confirm(),prompt()
+        // 위치 : document.getElementById().value, innerText, innerHTML
+
+    </script>
+</body>
+</html>

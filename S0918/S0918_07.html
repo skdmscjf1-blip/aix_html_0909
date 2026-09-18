@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--제이쿼리 사용하기위한 url 추가해야됨. 구글 검색 : 제이쿼리 최신-->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script> 
+    <!--제이쿼리 사용하기위한 url 추가해야됨. 구글 검색 : 제이쿼리 최신-->
+    <title>Document</title>
+    <script>
+        //document.getElementById("title").innerText = `대학생성적`;
+        $(function(){
+            //약식 제이쿼리 선언 - 함수는 안에서 선언해야 사용할수 있음
+            // value -> val() , innerText -> text() , innerHTML -> html()
+            $("#title").text("대학생성적 제이쿼리");
+
+        });
+        /*
+        $(document).ready(function(){
+            //기본 제이쿼리 선언 - 함수는 안에서 선언해야 사용할수 있음
+        })
+        */    
+    </script>
+</head>
+<body>
+    <!-- 제이쿼리 : 자바스크립트 라이브러리(함수 도서관) -->
+    <h2 id="title">학생성적프로그램</h2>
+    <input type="text" name="kor" id="kor"><br>
+    <input type="text" name="eng" id="eng"><br>
+    <input type="text" name="math" id="math"><br>
+    <button type="button" onclick="saveBtn()">저장</button>
+    <div id="d01"></div>
+    <script>
+        /*
+        function saveBtn(){
+        //var kor = document.getElementById("kor").value;
+        //console.log(kor);
+        var kor = $("#kor").val();
+        console.log("kor : "+kor)
+        }
+        */
+    </script>
+</body>
+</html>

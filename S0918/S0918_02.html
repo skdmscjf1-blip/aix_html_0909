@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 5000px; width: 3000px ;background: yellow;}
+        #d01{width: 200px; height: 200px; font-size: 30px;
+        position: fixed;background: white;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="d01"></div>
+    <div id="d02"></div>
+    <script>
+        // 스크롤 높이 확인 객체
+        // 이벤트 : click ,change , scroll 
+        window.addEventListener('scroll',function(){
+            //스크롤 할때마다 함수를 실행함.
+            var scrollTop = document.documentElement.scrollTop;
+            var scrollLeft = document.documentElement.scrollLeft;
+            document.getElementById("d01").innerText 
+        = `Y축으로 스크롤한 거리 : ${scrollTop}
+            X축으로 스크롤한 거리 : ${scrollLeft}`;
+        })
+        // html body 사이즈
+        /* 확인객체 - innerHeight, innerWidth
+        var height = window.innerHeight; // 모니터화면 세로사이즈
+        var width = window.innerWidth;  // 모니터화면 가로사이즈
+        var scrollTop = document.documentElement.scrollTop;
+        document.getElementById("d01").innerText 
+        = `화면세로사이즈 : ${height}
+        화면가로사이즈 : ${width}
+        Y축으로 스크롤한 거리 : ${scrollTop}
+        `;
+        */
+    </script>
+</body>
+</html>
