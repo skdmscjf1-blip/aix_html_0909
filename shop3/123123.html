@@ -66,7 +66,7 @@
                     rgba(0,0,0,.25),
                     rgba(0,0,0,.25)
                 ),
-                url("image/back1.jpg")
+                url("images/back1.jpg")
                 center / cover no-repeat;
 
             display: flex;
@@ -466,17 +466,17 @@
         <script>
             $(function(){
                 $.ajax({
-                    url : "https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=6613BZ5%2BJvbgL21xUjtyvIq2abGttCRy4x4mTGLj57OQnoxJhHHS5S743gXDkEsqxs5IOm9wg3%2FBL8F9rhJN1w%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
-                    type: "get",
-                    data : "",
+                    url:"https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=918RE13GA7OY7ZEmUzApgbOeAcQoZ%2FaHsXWcqPAKQ9YNNPj83KOstRMRIUrCFIAcm9qj2R6b7NFZjp%2FYsYzJLg%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json",
+                    type:"get",
+                    data:"",
                     dataType:"json",
                     success:function(data){
                         alert("성공");
                         console.log(data.response.body.items.item);
                         var arr = data.response.body.items.item;
-                        var txthtml=``;
+                        var txthtml = ``;
                         for(var i=0;i<10;i++){
-                            txthtml +=`
+                            txthtml += `
                             <a href="#" class="news-item">
                                 <div class="number">${arr[i].galContentId}</div>
                                 <div class="thumb">
@@ -487,10 +487,10 @@
                                 </div>
                                 <div class="news-content">
                                     <h3>
-                                        ${arr[i].galTitle}
+                                       ${arr[i].galTitle}
                                     </h3>
                                     <p>
-                                    ${arr[i].galSearchKeyword}
+                                        ${arr[i].galSearchKeyword}
                                     </p>
                                     <span class="date">
                                         ${arr[i].galPhotographyMonth}
@@ -500,30 +500,21 @@
                                     ${arr[i].galPhotographer}
                                 </div>
                             </a>
-
-                            
-                            
-                    `;
-
+                            `;
                         }
-                        $(".news_list").html(txthtml);
+                        $(".news-list").html(txthtml);
                     },
                     fail:function(){
-                        alert("실패")
+                        alert("실패");
                     }
-
-
-
                 });
-
-
-
+               
             });//제이쿼리
 
         </script>
 
         <!-- NEWS LIST -->
-        <div class="news_list">
+        <div class="news-list">
             <!-- a시작 -->
             <a href="#" class="news-item">
                 <div class="number">16</div>
